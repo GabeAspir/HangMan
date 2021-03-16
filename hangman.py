@@ -17,5 +17,20 @@ def hangman():
     alphabet = set(string.ascii_uppercase)
     usedLetters = set()
 
+    #Now we're gonna ask the user for a letter to guess
+    guessedLetter = input('Guess a letter:').upper()
+    if (guessedLetter in alphabet) and (guessedLetter not in usedLetters) :
+        usedLetters.add(guessedLetter)
+        #Was it a correctly guessed letter contained in our wordLetters set or not?
+        if guessedLetter in wordLetters:
+            wordLetters.remove(guessedLetter)
+
+    elif guessedLetter in usedLetters:
+        print('You already guessed that letter! Try again')
+
+    #Invalid input
+    else:
+        print('Not a letter in the alphabet, c\'mon')
+
 userInput = input('Type something:')
 print(userInput)
