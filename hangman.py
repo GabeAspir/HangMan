@@ -16,7 +16,7 @@ def hangman():
     wordLetters = set(word) # letters in the word
     alphabet = set(string.ascii_uppercase)
     usedLetters = set()
-    lives = 8
+    lives = 6
 
     #Now we're gonna ask the user for a letter to guess
     while len(wordLetters) > 0 and lives > 0: #make them keep guessing
